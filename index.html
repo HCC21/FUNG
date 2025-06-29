@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <title>Cherry Area 每日通道</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      text-align: center;
+      background-image: url('coffee-bg.jpg'); /* ✅ 請換成你的咖啡背景圖位置 */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #2f2f2f;
+    }
+    h1 {
+      background-color: rgba(255, 255, 255, 0.75);
+      display: inline-block;
+      padding: 10px 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    #dateTime {
+      background-color: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding: 5px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .link-button {
+      margin: 15px;
+      padding: 18px 24px;
+      display: inline-block;
+      background: rgba(76, 175, 80, 0.85);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      transition: background 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+    .link-button:hover {
+      background: rgba(69, 160, 73, 0.95);
+    }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.4em;
+    padding: 8px 20px;
+  }
+
+  #dateTime {
+    font-size: 0.9em;
+  }
+
+  .link-button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    font-size: 1em;
+    padding: 14px;
+  }
+
+  section {
+    padding: 18px;
+    margin: 30px 10px;
+  }
+}
+
+  </style>
+
+</head>
+<body>
+  <h1>Cherry Area 每日通道</h1>
+  <p id="dateTime"></p>
+
+  <a href="https://docs.google.com/spreadsheets/d/1Ot0y70auJ-ipO7_H2Hp24PNqeVxTrpy8/edit?usp=drivesdk&ouid=100257006586967577856&rtpof=true&sd=true" class="link-button" target="_blank">📊 6月2025 每日報數</a>
+  <a href="https://docs.google.com/spreadsheets/d/1cSMlk9OjQuhdWNZnaTYFmQR8t4XeTTh8uwuRjGFXZhA/edit?usp=drivesdk" class="link-button" target="_blank">📊 7月2025 每日報數</a>
+  <a href="https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU" class="link-button" target="_blank">⏰ 每日時鐘</a>
+  <a href="https://docs.google.com/spreadsheets/d/17X7Nb2qtCNTMuOPrmGSHCxqpIrujguAoZ0MUTFHRUqc/edit?usp=sharing" class="link-button" target="_blank">🧮 特別報數</a>
+  <a href="https://drive.google.com/drive/folders/1FN6h1g1dHdDr73U90JP1pFSd6_O2PJYT?usp=drive_link" class="link-button">📝 通告</a>
+  <a href="https://drive.google.com/drive/folders/1E5ZFu6CN6aFnHwJh-OXXMB29xzEIs81G?usp=drive_link" class="link-button">💵 宣傳物品</a>
+  <a href="https://drive.google.com/drive/folders/1yI6vbNPonKQSwrwM38v6Q1mRR5JkUyxJ?usp=drive_link" class="link-button">📄分店使用表格</a>
+  <script>
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById('dateTime').textContent = now.toLocaleString();
+    }, 1000);
+  </script>
+
+</body>
+</html>
