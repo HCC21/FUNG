@@ -94,5 +94,38 @@
     }, 1000);
   </script>
 
+<section style="margin-top:40px;">
+  <h2>輸入網址轉換成 QR CODE</h2>
+  <input type="text" id="urlInput" placeholder="請輸入網址" style="padding:10px; width:60%; border-radius:8px;">
+  <button onclick="generateQRCode()" style="padding:10px 20px; margin-left:10px; border-radius:8px; background-color:#4CAF50; color:white;">產生 QR Code</button>
+  <div id="qrCode" style="margin-top:20px;"></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  function generateQRCode() {
+    const url = document.getElementById('urlInput').value.trim();
+    const qrContainer = document.getElementById('qrCode');
+    qrContainer.innerHTML = '';
+    if (url) {
+      QRCode.toDataURL(url, function (err, src) {
+        if (!err) {
+          const img = document.createElement('img');
+          img.src = src;
+          img.style.maxWidth = '200px';
+          img.style.border = '1px solid #ccc';
+          img.style.padding = '10px';
+          img.style.background = '#fff';
+          qrContainer.appendChild(img);
+        } else {
+          qrContainer.textContent = '產生失敗，請確認網址格式';
+        }
+      });
+    } else {
+      qrContainer.textContent = '請先輸入網址';
+    }
+  }
+</script>
+
 </body>
 </html>
