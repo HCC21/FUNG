@@ -2,105 +2,252 @@
 <html lang="zh-Hant">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Cherry Area 每日通道</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 
-  <meta charset="UTF-8">
-  <title>Cherry Area 每日通道</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Noto Serif TC', serif;
-      text-align: center;
-      background-image: url('coffee-bg.jpg'); /* ✅ 請換成你的咖啡背景圖位置 */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #2f2f2f;
-    }
+<style>
+  body {
+    font-family: 'Noto Serif TC', serif;
+    text-align: center;
+    background-image: url('coffee-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #2f2f2f;
+  }
+  h1 {
+    background-color: rgba(255, 255, 255, 0.75);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+  }
+  #dateTime {
+    background-color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .link-button {
+    margin: 15px;
+    padding: 18px 24px;
+    display: inline-block;
+    background: rgba(76, 175, 80, 0.85);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+    backdrop-filter: blur(6px);
+  }
+  .link-button:hover {
+    background: rgba(69, 160, 73, 0.95);
+  }
+
+  /* ⭐ 新增：讓 H2 標題更清晰 */
+  .section-title {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 10px;
+  }
+
+  /* ⭐ 新增：查詢結果背景 */
+  .result-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
     h1 {
-      background-color: rgba(255, 255, 255, 0.75);
-      display: inline-block;
-      padding: 10px 30px;
-      border-radius: 12px;
-      margin-top: 30px;
+      font-size: 1.4em;
+      padding: 8px 20px;
     }
     #dateTime {
-      background-color: rgba(255, 255, 255, 0.6);
-      display: inline-block;
-      padding: 5px 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      font-size: 0.9em;
     }
     .link-button {
-      margin: 15px;
-      padding: 18px 24px;
-      display: inline-block;
-      background: rgba(76, 175, 80, 0.85);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.1em;
-      transition: background 0.3s ease;
-      backdrop-filter: blur(6px);
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      font-size: 1em;
+      padding: 14px;
     }
-    .link-button:hover {
-      background: rgba(69, 160, 73, 0.95);
+    section {
+      padding: 18px;
+      margin: 30px 10px;
     }
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.4em;
-    padding: 8px 20px;
   }
-
-  #dateTime {
-    font-size: 0.9em;
-  }
-
-  .link-button {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    font-size: 1em;
-    padding: 14px;
-  }
-
-  section {
-    padding: 18px;
-    margin: 30px 10px;
-  }
-}
-
-  </style>
+</style>
 
 </head>
 <body>
-  <h1>Cherry Area 每日通道</h1>
-  <p id="dateTime"></p>
+
+<h1>Cherry Area 每日通道</h1>
+<p id="dateTime"></p>
 
 <a href="https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link" class="link-button" target="_blank">📊2026 Revence Data</a>
 <a href="https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link" class="link-button" target="_blank">📊2025 Revence Data</a>
-
-  <a href="https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU" class="link-button" target="_blank">⏰ 每日時鐘</a>
- 
-  <a href="https://drive.google.com/drive/folders/1FN6h1g1dHdDr73U90JP1pFSd6_O2PJYT?usp=drive_link" class="link-button">📝 通告</a>
-  <a href="https://drive.google.com/drive/folders/1E5ZFu6CN6aFnHwJh-OXXMB29xzEIs81G?usp=drive_link" class="link-button">💵 宣傳物品</a>
-  <a href="https://drive.google.com/drive/folders/1yI6vbNPonKQSwrwM38v6Q1mRR5JkUyxJ?usp=drive_link" class="link-button">📄分店使用表格</a>
- <a href="https://pcc-inventory.web.app/auth" class="link-button">📦PCC Inventory系統</a> 
+<a href="https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU" class="link-button" target="_blank">⏰ 每日時鐘</a>
+<a href="https://drive.google.com/drive/folders/1FN6h1g1dHdDr73U90JP1pFSd6_O2PJYT?usp=drive_link" class="link-button">📝 通告</a>
+<a href="https://drive.google.com/drive/folders/1E5ZFu6CN6aFnHwJh-OXXMB29xzEIs81G?usp=drive_link" class="link-button">💵 宣傳物品</a>
+<a href="https://drive.google.com/drive/folders/1yI6vbNPonKQSwrwM38v6Q1mRR5JkUyxJ?usp=drive_link" class="link-button">📄分店使用表格</a>
+<a href="https://pcc-inventory.web.app/auth" class="link-button">📦PCC Inventory系統</a>
 <a href="https://docs.google.com/forms/d/1T7FBTbzPMQU0INJRbpaJI1CJqCrw41gR0riJABgEYMA/viewform?edit_requested=true" class="link-button">📦S/O 收貨差異申訴</a>
-<a href="https://hkprodapp.pacificcoffee.com/dist/#/" class="link-button">📦ERP系統</a> 
+<a href="https://hkprodapp.pacificcoffee.com/dist/#/" class="link-button">📦ERP系統</a>
+<a href="https://portal.gaiaworkforce.com/#/setting" class="link-button" target="_blank">🕗 Gaia UI</a>
+<a href="https://drive.google.com/drive/folders/11a_VDUoQvwF7xf9Hudr92NGgBIfNAAp6" class="link-button" target="_blank">📷 每月上載更表</a>
 
-  <a href="https://portal.gaiaworkforce.com/#/setting" class="link-button" target="_blank">🕗 Gaia UI</a>
+<script>
+  setInterval(() => {
+    const now = new Date();
+    document.getElementById('dateTime').textContent = now.toLocaleString();
+  }, 1000);
+</script>
 
- <a href="https://drive.google.com/drive/folders/11a_VDUoQvwF7xf9Hudr92NGgBIfNAAp6" class="link-button" target="_blank">📷 每月上載更表</a>
-
-  <script>
-    setInterval(() => {
-      const now = new Date();
-      document.getElementById('dateTime').textContent = now.toLocaleString();
-    }, 1000);
-  </script>
-
+<!-- ⭐ 分店代號查詢 -->
 <section style="margin-top:40px;">
-  <h2>輸入網址轉換成 QR CODE</h2>
+  <h2 class="section-title">輸入分店代號查詢分店名稱</h2>
+  <br><br>
+  <input type="text" id="storeCodeInput" placeholder="請輸入分店代號，例如：HCC"
+         style="padding:10px; width:60%; border-radius:8px;">
+  <button onclick="lookupStoreName()"
+          style="padding:10px 20px; margin-left:10px; border-radius:8px; background-color:#4CAF50; color:white;">
+    查詢
+  </button>
+
+  <div id="storeNameResult" class="result-box" style="font-size:1.2em; font-weight:bold;"></div>
+</section>
+
+<script>
+ const storeMap = {
+  "CTS": "荃灣千色二期",
+  "HCC": "尖沙咀文化中心",
+  "KAT": "藍田啟田",
+  "KIM": "尖沙咀金巴厘",
+  "LGN": "麗港城",
+  "NAT": "尖沙咀山林道",
+  "ONE": "何文田勝利道",
+  "PID": "珀麗灣",
+  "SCD": "尖沙咀新港中心",
+  "SSC": "上水中心",
+  "TKO": "將軍澳尚德",
+  "TKS": "太古城",
+  "CCK": "萬國寶通",
+  "NMS": "銀幕街",
+  "CH3": "尖沙咀中港城",
+  "GCK": "中央廣場",
+  "KCC": "九貿",
+  "KR2": "英皇道625",
+  "KWC": "嘉華",
+  "LAW": "荔枝角羅氏大廈",
+  "LUP": "沙田好運中心",
+  "MHH": "美孚曼克頓山",
+  "P33": "新蒲崗爵祿街",
+  "WHK": "荔枝角永康街",
+  "HUA": "科學園華為",
+  "OHM": "沙田石門滙豐",
+  "OS2": "中環恒生",
+  "OSM": "旺角恒生113",
+  "PMH": "瑪嘉烈",
+  "PWH": "沙田威爾斯",
+  "TKH": "將軍澳醫院",
+  "TMH": "屯門醫院",
+  "UE2": "大埔教大",
+  "ULN": "嶺大",
+  "UPH": "紅磡灣理大",
+  "UPL": "理工",
+  "BCT": "中銀",
+  "CBK": "數碼港",
+  "HKP": "香港廣場",
+  "IFP": "無限極",
+  "LPC": "力寶",
+  "QM2": "瑪麗1座",
+  "QMT": "瑪麗T座",
+  "SJC": "聖約翰大廈",
+  "TCP": "華懋二期",
+  "TCS": "中環中心",
+  "WY2": "雲鹹街",
+  "CDW": "荃灣中染",
+  "CVP": "會展",
+  "FTC": "英皇道1063",
+  "GEC": "鷹君",
+  "LGT": "利園",
+  "LME": "安盛",
+  "MFC": "宏利中心",
+  "MNT": "創紀8",
+  "NN2": "如心",
+  "CHT": "卓爾",
+  "CTP": "新明大廈",
+  "ECT": "國際交易中心",
+  "FVP": "錦繡花園",
+  "HGC": "黃金海岸",
+  "HHQ": "啟匯",
+  "OMT": "宏利大樓",
+  "SKY": "宏天",
+  "TM2": "屯市廣場",
+  "GEH": "港怡",
+  "HCH": "兒童醫院",
+  "KLH": "九龍醫院",
+  "LOK": "樂富",
+  "MMK": "紅磡都會",
+  "QEK": "伊利沙伯醫院",
+  "STH": "法國醫院",
+  "TEM": "黃大仙",
+  "UB2": "浸大",
+  "UDI": "知專",
+  "UKE": "專業進修學院",
+  "UST": "科大",
+  "USY": "樹仁",
+  "DB3": "愉景灣",
+  "IPS": "港運城",
+  "ODL": "德勤",
+  "OH3": "滙豐20樓",
+  "OH4": "大角咀滙豐",
+  "OH5": "滙豐地庫",
+  "OH6": "滙豐28樓",
+  "OLP": "國都",
+  "OML": "長江美銀",
+  "PEB": "太子花園街",
+  "STN": "赤柱",
+  "WAI": "大圍圍方",
+  "ALK": "聯合鹿島",
+  "AWE": "亞博一樓",
+  "CLI": "中人壽",
+  "CP2": "中環廣場",
+  "FBT": "華比富通",
+  "FNK": "東城大廈",
+  "JPW": "三聯",
+  "TVC": "灣仔教會",
+  "TYP": "大有"
+};
+
+
+  function lookupStoreName() {
+    const code = document.getElementById('storeCodeInput').value.trim();
+    const result = document.getElementById('storeNameResult');
+
+    if (!code) {
+      result.textContent = "請輸入分店代號";
+      return;
+    }
+
+    if (storeMap[code]) {
+      result.textContent = "分店名稱： " + storeMap[code];
+    } else {
+      result.textContent = "查無此分店代號";
+    }
+  }
+</script>
+<!-- ⭐ QR Code 區塊 -->
+<section style="margin-top:40px;">
+  <h2 class="section-title">輸入網址轉換成 QR CODE</h2>
+  <br><br>
   <input type="text" id="urlInput" placeholder="請輸入網址" style="padding:10px; width:60%; border-radius:8px;">
   <button onclick="generateQRCode()" style="padding:10px 20px; margin-left:10px; border-radius:8px; background-color:#4CAF50; color:white;">產生 QR Code</button>
   <div id="qrCode" style="margin-top:20px;"></div>
@@ -131,6 +278,7 @@
     }
   }
 </script>
+
 
 </body>
 </html>
