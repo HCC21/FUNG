@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 
 <style>
+
   body {
     font-family: 'Noto Serif TC', serif;
     text-align: center;
@@ -77,6 +78,40 @@
 
 <h1>Cherry Area 每日通道</h1>
 <p id="dateTime"></p>
+<!-- ⭐ 香港 7 日天氣預報（自動更新） -->
+<section style="margin-top:20px; padding:15px; background:rgba(255,255,255,0.8); width:90%; max-width:900px; margin-left:auto; margin-right:auto; border-radius:12px;">
+  <h2 style="margin-bottom:10px;">🌤️ 香港 7 日天氣預報</h2>
+  <div id="weather7days" style="text-align:left; font-size:1.1em; line-height:1.6;"></div>
+</section>
+
+<script>
+  async function loadWeather() {
+    try {
+      const res = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc");
+      const data = await res.json();
+
+      let html = "";
+      const days = data.weatherForecast.slice(0, 7); // 只取 7 日
+
+      days.forEach(d => {
+        html += `
+          <div>
+            📅 <b>${d.forecastDate.substring(4,6)}月${d.forecastDate.substring(6,8)}日</b>
+            — ${d.forecastWeather}
+            🌡️ ${d.forecastMintemp.value}°C ~ ${d.forecastMaxtemp.value}°C
+          </div>
+        `;
+      });
+
+      document.getElementById("weather7days").innerHTML = html;
+
+    } catch (e) {
+      document.getElementById("weather7days").innerHTML = "⚠️ 天氣資料暫時無法取得";
+    }
+  }
+
+  loadWeather();
+</script>
 
 <a href="https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link" class="link-button" target="_blank">📊2026 Revence Data</a>
 <a href="https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link" class="link-button" target="_blank">📊2025 Revence Data</a>
