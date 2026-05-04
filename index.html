@@ -55,18 +55,19 @@
 
   .result-box {
     background-color: rgba(255, 255, 255, 0.85);
-    display: inline-block;
-    padding: 10px 20px;
+    display: block;
+    padding: 12px 20px;
     border-radius: 10px;
-    margin-top: 15px;
-    font-size: 1.2em;
+    margin: 12px auto 0 auto;
+    width: 60%;
+    font-size: 1.1em;
     font-weight: bold;
+    text-align: left;
   }
 
   @media (max-width: 768px) {
-    .flex-row {
-      flex-direction: column;
-      align-items: center;
+    .result-box {
+      width: 90%;
     }
   }
 </style>
@@ -96,52 +97,44 @@
   }, 1000);
 </script>
 
-<!-- ⭐ 分店代號查詢（下拉選擇 + 地址 + 電話） -->
+<!-- ⭐ 分店代號查詢（地址 + 電話顯示在下方） -->
 <section style="margin-top:40px;">
   <h2 class="section-title">選擇分店代號查詢資料</h2>
   <br><br>
 
-  <div class="flex-row" style="display:flex; justify-content:center; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+  <select id="storeCodeInput" style="padding:10px; width:60%; border-radius:8px;">
+    <option value="">請選擇分店代號</option>
+  </select>
 
-    <!-- 下拉選單 -->
-    <div>
-      <select id="storeCodeInput" style="padding:10px; width:260px; border-radius:8px;">
-        <option value="">請選擇分店代號</option>
-      </select>
-
-      <div id="storeAddressResult" class="result-box" style="width:260px;">地址：—</div>
-    </div>
-
-    <!-- 電話 -->
-    <div>
-      <div id="storePhoneResult" class="result-box" style="width:260px;">電話：—</div>
-    </div>
-
-  </div>
+  <div id="storeAddressResult" class="result-box">地址：—</div>
+  <div id="storePhoneResult" class="result-box">電話：—</div>
 </section>
 
 <script>
  const storeMap = {
-   "ALK":"聯合鹿島","AWE":"亞博一樓","BCT":"中銀","CBK":"數碼港","CCK":"萬國寶通",
-   "CDW":"荃灣中染","CH3":"尖沙咀中港城","CHT":"卓爾","CLI":"中人壽","CP2":"中環廣場",
-   "CTS":"荃灣千色二期","CTP":"新明大廈","CVP":"會展","DB3":"愉景灣","ECT":"國際交易中心",
-   "FBT":"華比富通","FNK":"東城大廈","FTC":"英皇道1063","FVP":"錦繡花園","GCK":"中央廣場",
-   "GEC":"鷹君","GEH":"港怡","HCC":"尖沙咀文化中心","HCH":"兒童醫院","HGC":"黃金海岸",
-   "HKP":"香港廣場","HUA":"科學園華為","IFP":"無限極","IPS":"港運城","JPW":"三聯",
-   "KAT":"藍田啟田","KCC":"九貿","KIM":"尖沙咀金巴厘","KLH":"九龍醫院","KR2":"英皇道625",
-   "KWC":"嘉華","LAW":"荔枝角羅氏大廈","LGT":"利園","LGN":"麗港城","LME":"安盛",
-   "LOK":"樂富","LPC":"力寶","LUP":"沙田好運中心","MFC":"宏利中心","MHH":"美孚曼克頓山",
-   "MMK":"紅磡都會","MNT":"創紀8","NAT":"尖沙咀山林道","NMS":"銀幕街","NN2":"如心",
-   "ODL":"德勤","OH3":"滙豐20樓","OH4":"大角咀滙豐","OH5":"滙豐地庫","OH6":"滙豐28樓",
-   "OHM":"沙田石門滙豐","OLP":"國都","OML":"長江美銀","OMT":"宏利大樓","ONE":"何文田勝利道",
-   "OS2":"中環恒生","OSM":"旺角恒生113","P33":"新蒲崗爵祿街","PEB":"太子花園街","PID":"珀麗灣",
-   "PMH":"瑪嘉烈","PWH":"沙田威爾斯","QEK":"伊利沙伯醫院","QM2":"瑪麗1座","QMT":"瑪麗T座",
-   "SCD":"尖沙咀新港中心","SJC":"聖約翰大廈","SKY":"宏天","SSC":"上水中心","STH":"法國醫院",
-   "STN":"赤柱","TCP":"華懋二期","TCS":"中環中心","TEM":"黃大仙","TKH":"將軍澳醫院",
-   "TKO":"將軍澳尚德","TKS":"太古城","TM2":"屯市廣場","TMH":"屯門醫院","TVC":"灣仔教會",
-   "TYP":"大有","UB2":"浸大","UDI":"知專","UE2":"大埔教大","UKE":"專業進修學院",
-   "ULN":"嶺大","UPH":"紅磡灣理大","UPL":"理工","UST":"科大","USY":"樹仁",
-   "WAI":"大圍圍方","WHK":"荔枝角永康街","WY2":"雲鹹街"
+   "CTS":"荃灣千色二期","HCC":"尖沙咀文化中心","KAT":"藍田啟田","KIM":"尖沙咀金巴厘",
+   "LGN":"麗港城","NAT":"尖沙咀山林道","ONE":"何文田勝利道","PID":"珀麗灣",
+   "SCD":"尖沙咀新港中心","SSC":"上水中心","TKO":"將軍澳尚德","TKS":"太古城",
+   "CCK":"萬國寶通","NMS":"銀幕街","CH3":"尖沙咀中港城","GCK":"中央廣場",
+   "KCC":"九貿","KR2":"英皇道625","KWC":"嘉華","LAW":"荔枝角羅氏大廈",
+   "LUP":"沙田好運中心","MHH":"美孚曼克頓山","P33":"新蒲崗爵祿街","WHK":"荔枝角永康街",
+   "HUA":"科學園華為","OHM":"沙田石門滙豐","OS2":"中環恒生","OSM":"旺角恒生113",
+   "PMH":"瑪嘉烈","PWH":"沙田威爾斯","TKH":"將軍澳醫院","TMH":"屯門醫院",
+   "UE2":"大埔教大","ULN":"嶺大","UPH":"紅磡灣理大","UPL":"理工","BCT":"中銀",
+   "CBK":"數碼港","HKP":"香港廣場","IFP":"無限極","LPC":"力寶","QM2":"瑪麗1座",
+   "QMT":"瑪麗T座","SJC":"聖約翰大廈","TCP":"華懋二期","TCS":"中環中心",
+   "WY2":"雲鹹街","CDW":"荃灣中染","CVP":"會展","FTC":"英皇道1063","GEC":"鷹君",
+   "LGT":"利園","LME":"安盛","MFC":"宏利中心","MNT":"創紀8","NN2":"如心",
+   "CHT":"卓爾","CTP":"新明大廈","ECT":"國際交易中心","FVP":"錦繡花園",
+   "HGC":"黃金海岸","HHQ":"啟匯","OMT":"宏利大樓","SKY":"宏天","TM2":"屯市廣場",
+   "GEH":"港怡","HCH":"兒童醫院","KLH":"九龍醫院","LOK":"樂富","MMK":"紅磡都會",
+   "QEK":"伊利沙伯醫院","STH":"法國醫院","TEM":"黃大仙","UB2":"浸大",
+   "UDI":"知專","UKE":"專業進修學院","UST":"科大","USY":"樹仁","DB3":"愉景灣",
+   "IPS":"港運城","ODL":"德勤","OH3":"滙豐20樓","OH4":"大角咀滙豐","OH5":"滙豐地庫",
+   "OH6":"滙豐28樓","OLP":"國都","OML":"長江美銀","PEB":"太子花園街",
+   "STN":"赤柱","WAI":"大圍圍方","ALK":"聯合鹿島","AWE":"亞博一樓",
+   "CLI":"中人壽","CP2":"中環廣場","FBT":"華比富通","FNK":"東城大廈",
+   "JPW":"三聯","TVC":"灣仔教會","TYP":"大有"
  };
 
  // ⭐ 地址（示範，可自行補上）
@@ -151,7 +144,6 @@
    "KAT":"藍田啟田商場 1 樓",
    "KIM":"尖沙咀金巴利道 25 號",
    "LGN":"麗港城商場地下"
-   // ⭐ 你可以在這裡加入所有分店地址
  };
 
  // ⭐ 電話（示範，可自行補上）
