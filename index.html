@@ -72,6 +72,26 @@
 
 <body>
 
+<!-- ⭐ 左上角登入欄 -->
+<div style="
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.85);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  z-index: 999;
+">
+  <input type="password" id="loginPassword" placeholder="管理員密碼"
+         style="padding:5px; width:140px; border-radius:6px;">
+  <button onclick="checkLogin()"
+          style="padding:5px 10px; border-radius:6px; background:#4CAF50; color:white;">
+    登入
+  </button>
+  <p id="loginMessage" style="color:red; font-weight:bold; margin:5px 0 0 0;"></p>
+</div>
+
 <h1>Cherry Area 每日通道</h1>
 <p id="dateTime"></p>
 
@@ -107,36 +127,38 @@
   loadWeather();
 </script>
 
-<!-- ⭐ 密碼保護功能 -->
-<script>
-  function openProtectedLink(url) {
-    const pwd = prompt("請輸入密碼：");
+<!-- ⭐ 登入後顯示的 4 個連結 -->
+<div id="adminLinks" style="display:none; margin-top:20px;">
 
-    // ⭐ 修改密碼在這裡
-    const correct = "cherry2026";
+  <a href="https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link" class="link-button">🔒 2026 Revenue Data</a>
 
-    if (pwd === correct) {
-      window.open(url, "_blank");
-    } else if (pwd !== null) {
-      alert("密碼錯誤");
-    }
-  }
-</script>
+  <a href="https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link" class="link-button">🔒 2025 Revenue Data</a>
+
+  <a href="https://drive.google.com/drive/folders/11a_VDUoQvwF7xf9Hudr92NGgBIfNAAp6" class="link-button">🔒 每月上載更表</a>
+
+  <a href="https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU" class="link-button">🔒 每日時鐘</a>
+
+</div>
 
 <!-- ⭐ 其他連結 -->
 <a href="https://hkprodapp.pacificcoffee.com/dist/#/" class="link-button">📦ERP系統</a>
 <a href="https://pcc-inventory.web.app/auth" class="link-button">📦PCC Inventory系統(只用作Clockin/out)</a>
 <a href="https://portal.gaiaworkforce.com/#/setting" class="link-button" target="_blank">🕗 Gaia UI</a>
 <a href="https://drive.google.com/drive/folders/1yI6vbNPonKQSwrwM38v6Q1mRR5JkUyxJ?usp=drive_link" class="link-button">📄分店使用表格</a>
-<!-- ⭐ 連結按鈕（含密碼保護） -->
-<a href="#" class="link-button" onclick="openProtectedLink('https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link')">🔒 2026 Revenue Data</a>
-
-<a href="#" class="link-button" onclick="openProtectedLink('https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link')">🔒 2025 Revenue Data</a>
-
-<a href="#" class="link-button" onclick="openProtectedLink('https://drive.google.com/drive/folders/11a_VDUoQvwF7xf9Hudr92NGgBIfNAAp6')">🔒 每月上載更表</a>
-<a href="#" class="link-button" onclick="openProtectedLink('https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU')">🔒 每日時鐘</a>
 
 <script>
+  function checkLogin() {
+    const input = document.getElementById("loginPassword").value;
+    const correct = "cherry2026"; // ⭐ 你的登入密碼
+
+    if (input === correct) {
+      document.getElementById("adminLinks").style.display = "block";
+      document.getElementById("loginMessage").textContent = "";
+    } else {
+      document.getElementById("loginMessage").textContent = "密碼錯誤";
+    }
+  }
+
   setInterval(() => {
     const now = new Date();
     document.getElementById('dateTime').textContent = now.toLocaleString();
@@ -157,11 +179,9 @@
   <div id="storePhoneResult" class="result-box">電話：—</div>
 </section>
 
-<!-- ⭐ 載入獨立資料檔 -->
 <script src="store-data.js"></script>
 
 <script>
-  const storeNameMap = {};
   const storeNameZhMap = {};
   const addressMap = {};
   const addressZhMap = {};
@@ -169,8 +189,7 @@
 
   for (const code in storeData) {
     const s = storeData[code];
-    storeNameMap[code] = s.nameEn;
-    storeNameZhMap[code] = s.nameZh;   // ⭐ 新增中文名稱
+    storeNameZhMap[code] = s.nameZh;
     addressMap[code] = s.addressEn;
     addressZhMap[code] = s.addressZh;
     phoneMap[code] = s.phone;
@@ -182,11 +201,8 @@
 
     codes.forEach(code => {
       const opt = document.createElement("option");
-
-      // ⭐ 改成顯示中文名稱
       opt.value = code;
       opt.textContent = code + " — " + storeNameZhMap[code];
-
       select.appendChild(opt);
     });
   };
