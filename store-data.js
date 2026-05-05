@@ -811,7 +811,7 @@ Object.assign(storeData, {
     nameZh: "尚德TKO",
     addressEn: "Unit SA03, 1/F, TKO Spot, Sheung Tak Estate, 2 Tong Ming Street, Tseung Kwan O",
     addressZh: "將軍澳唐明街2號TKO SPOT一樓, SA03單位",
-    phone: "5317 2218",
+    phone: "5108 4076",
     district: "NT"
   },
 
