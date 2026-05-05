@@ -471,120 +471,6 @@ Object.assign(storeData, {
 });
 Object.assign(storeData, {
 
-  "LME": {
-    nameEn: "Landmark East (AXA Tower)",
-    nameZh: "安盛金融大樓",
-    addressEn: "Shop 1, G/F, AXA Tower, Landmark East, 100 How Ming Street, Kwun Tong",
-    addressZh: "九龍觀塘巧明街100號安盛金融大樓地下1號舖",
-    phone: "5220 1439",
-    district: "KLN"
-  },
-
-  "LOK": {
-    nameEn: "Lok Fu Place",
-    nameZh: "樂富廣場",
-    addressEn: "Shop 1158, Level 1, Zone A, Lok Fu Place, Lok Fu",
-    addressZh: "九龍樂富樂富廣場A區1樓1158號舖",
-    phone: "5423 8580",
-    district: "KLN"
-  },
-
-  "LPC": {
-    nameEn: "Lippo Centre",
-    nameZh: "力寶中心",
-    addressEn: "Shop 2AC, 1/F, Lippo Centre, 89 Queensway, Admiralty",
-    addressZh: "金鐘金鐘道89號力寶中心1樓2AC號舖",
-    phone: "5133 6579",
-    district: "HK"
-  },
-
-  "LUP": {
-    nameEn: "Lucky Plaza",
-    nameZh: "沙田好運中心",
-    addressEn: "Shop 3099–3100, Level 3, Lucky Plaza, 1–15 Wang Pok Street, Sha Tin",
-    addressZh: "新界沙田橫壆街1–15號沙田好運中心3樓3099、3100號舖",
-    phone: "5100 5336",
-    district: "NT"
-  },
-
-  "MFC": {
-    nameEn: "Manulife Financial Centre",
-    nameZh: "宏利金融中心",
-    addressEn: "Shop 3 & 4, Level 1, Manulife Financial Centre, 223 Wai Yip Street, Kwun Tong",
-    addressZh: "九龍觀塘偉業街223號宏利金融中心1樓3–4號舖",
-    phone: "5223 7039",
-    district: "KLN"
-  },
-
-  "MHH": {
-    nameEn: "Manhattan Hill",
-    nameZh: "曼克頓山",
-    addressEn: "Shops G04–05, G/F, Manhattan Mid-Town, 1 Po Lun Street, Mei Foo",
-    addressZh: "美孚寶輪街1號曼克頓山地下G04–05號舖",
-    phone: "5134 0622",
-    district: "KLN"
-  },
-
-});
-Object.assign(storeData, {
-
-  "LME": {
-    nameEn: "Landmark East (AXA Tower)",
-    nameZh: "安盛金融大樓",
-    addressEn: "Shop 1, G/F, AXA Tower, Landmark East, 100 How Ming Street, Kwun Tong",
-    addressZh: "九龍觀塘巧明街100號安盛金融大樓地下1號舖",
-    phone: "5220 1439",
-    district: "KLN"
-  },
-
-  "LOK": {
-    nameEn: "Lok Fu Place",
-    nameZh: "樂富廣場",
-    addressEn: "Shop 1158, Level 1, Zone A, Lok Fu Place, Lok Fu",
-    addressZh: "九龍樂富樂富廣場A區1樓1158號舖",
-    phone: "5423 8580",
-    district: "KLN"
-  },
-
-  "LPC": {
-    nameEn: "Lippo Centre",
-    nameZh: "力寶中心",
-    addressEn: "Shop 2AC, 1/F, Lippo Centre, 89 Queensway, Admiralty",
-    addressZh: "金鐘金鐘道89號力寶中心1樓2AC號舖",
-    phone: "5133 6579",
-    district: "HK"
-  },
-
-  "LUP": {
-    nameEn: "Lucky Plaza",
-    nameZh: "沙田好運中心",
-    addressEn: "Shop 3099–3100, Level 3, Lucky Plaza, 1–15 Wang Pok Street, Sha Tin",
-    addressZh: "新界沙田橫壆街1–15號沙田好運中心3樓3099、3100號舖",
-    phone: "5100 5336",
-    district: "NT"
-  },
-
-  "MFC": {
-    nameEn: "Manulife Financial Centre",
-    nameZh: "宏利金融中心",
-    addressEn: "Shop 3 & 4, Level 1, Manulife Financial Centre, 223 Wai Yip Street, Kwun Tong",
-    addressZh: "九龍觀塘偉業街223號宏利金融中心1樓3–4號舖",
-    phone: "5223 7039",
-    district: "KLN"
-  },
-
-  "MHH": {
-    nameEn: "Manhattan Hill",
-    nameZh: "曼克頓山",
-    addressEn: "Shops G04–05, G/F, Manhattan Mid-Town, 1 Po Lun Street, Mei Foo",
-    addressZh: "美孚寶輪街1號曼克頓山地下G04–05號舖",
-    phone: "5134 0622",
-    district: "KLN"
-  },
-
-});
-Object.assign(storeData, {
-
   "MMK": {
     nameEn: "The Metropolis Mall",
     nameZh: "都會商場",
@@ -705,7 +591,7 @@ Object.assign(storeData, {
     nameZh: "美國銀行",
     addressEn: "40/F, Bank of America, Cheung Kong Centre, 2 Queen's Road Central",
     addressZh: "中環皇后大道中2號長江集團中心40樓 美國銀行",
-    phone: "5137 5065",
+    phone: "5137 5064",
     district: "HK"
   },
 
@@ -879,24 +765,42 @@ Object.assign(storeData, {
 Object.assign(storeData, {
 
   "TCP": {
-    nameEn: "Tseung Kwan O Plaza",
-    nameZh: "將軍澳廣場",
-    addressEn: "Shop G18, G/F, Tseung Kwan O Plaza, 1 Tong Tak Street, Tseung Kwan O",
-    addressZh: "新界將軍澳唐德街1號將軍澳廣場地下G18號舖",
-    phone: "5317 2173",
+    nameEn: "Two Chinachem Plaza",
+    nameZh: "華懋廣場二期",
+    addressEn: "Shop 3, 1/F, Two Chinachem Plaza, 68 Connaught Rd Central, Central",
+    addressZh: "中環干諾道中68號華懋廣場二期1樓3號舖",
+    phone: "5160 9184",
+    district: "HK"
+  },
+
+  "TCS": {
+    nameEn: "The Center",
+    nameZh: "中環中心",
+    addressEn: "Shop 4, Entrance Hall Floor, The Center, 99 Queen's Road, Central",
+    addressZh: "中環皇后大道中99號中環中心4號舖",
+    phone: "5161 0494",
+    district: "HK"
+  },
+
+  "TEM": {
+    nameEn: "Temple Mall",
+    nameZh: "黃大仙中心",
+    addressEn: "Shop no. N111 & N112, Level 1, Temple Mall North, Upper Wong Tai Sin Estate, Lung Cheung Road, Wong Tai Sin, Kowloon",
+    addressZh: "九龍黃大仙龍翔道黃大仙中心北館1樓N111及N112號舖",
+    phone: "5486 0642",
+    district: "KLN"
+  },
+
+  "TKH": {
+    nameEn: "Tseung Kwan O Hospital",
+    nameZh: "將軍澳醫院",
+    addressEn: "Glass House, G/F, Ambulatory Care Block, Tseung Kwan O Hospital, 2 Po Ning Lane, Hang Hau, Tseung Kwan O",
+    addressZh: "將軍澳坑口寶寧里二號日間醫療大樓地下",
+    phone: "9255 3660",
     district: "NT"
   },
 
-  "TIK": {
-    nameEn: "Tiu Keng Leng Sports Centre",
-    nameZh: "調景嶺體育館",
-    addressEn: "Shop 1, G/F, Tiu Keng Leng Sports Centre, 2 Chui Ling Road, Tseung Kwan O",
-    addressZh: "新界將軍澳翠嶺路2號調景嶺體育館地下1號舖",
-    phone: "5317 2194",
-    district: "NT"
-  },
-
-  "TKO": {
+   "TKO": {
     nameEn: "TKO Spot",
     nameZh: "尚德TKO",
     addressEn: "Unit SA03, 1/F, TKO Spot, Sheung Tak Estate, 2 Tong Ming Street, Tseung Kwan O",
@@ -918,157 +822,154 @@ Object.assign(storeData, {
 
 Object.assign(storeData, {
 
-  "TMC": {
-    nameEn: "Tin Shui Wai Tin Chak Shopping Centre",
-    nameZh: "天澤商場",
-    addressEn: "Shop 106, Tin Chak Shopping Centre, Tin Shui Wai",
-    addressZh: "新界天水圍天澤商場106號舖",
-    phone: "5317 2269",
+  "TM2": {
+    nameEn: "TUEN MUN PLAZA",
+    nameZh: "屯門市廣場",
+    addressEn: "SHOP 43,45 &46, 1/F, TUEN MUN PLAZA PHASE 2, TUEN MUN",
+    addressZh: "香港新界屯門屯隆街3號屯門市地段第235號屯門市廣場二期,1樓,43,45&46號舖",
+    phone: "5100 2131",
     district: "NT"
   },
 
-  "TMS": {
-    nameEn: "Tuen Mun Siu Lun Sports Ground",
-    nameZh: "兆麟運動場",
-    addressEn: "Shop 1, G/F, Siu Lun Sports Ground, 1 Tsing Chung Koon Road, Tuen Mun",
-    addressZh: "新界屯門青松觀路1號兆麟運動場地下1號舖",
-    phone: "5317 2293",
+  "TMH": {
+    nameEn: "Tuen Mun Hospital",
+    nameZh: "屯門醫院",
+    addressEn: "Shop A, G/F Atrium , Main Block, Tuen Mun Hospital",
+    addressZh: "屯門醫院主座地下中庭A鋪",
+    phone: "5138 8150",
     district: "NT"
   },
-
-  "TPB": {
-    nameEn: "Tai Po Mega Mall",
-    nameZh: "大埔超級城",
-    addressEn: "Shop 021, Zone B, Tai Po Mega Mall, 8 & 10 On Pong Road, Tai Po",
-    addressZh: "新界大埔安邦路8及10號大埔超級城B區021號舖",
-    phone: "5317 2314",
-    district: "NT"
-  },
-
-  "TYS": {
-    nameEn: "Tsing Yi Station",
-    nameZh: "青衣站",
-    addressEn: "Shop 8, Concourse Level, Tsing Yi MTR Station",
-    addressZh: "新界青衣港鐵站大堂層8號舖",
-    phone: "5317 2335",
-    district: "NT"
-  },
-
-});
 Object.assign(storeData, {
 
-  "UCP": {
-    nameEn: "Union Hospital",
-    nameZh: "仁安醫院",
-    addressEn: "G/F, Union Hospital, 18 Fu Kin Street, Tai Wai",
-    addressZh: "新界大圍富健街18號仁安醫院地下",
-    phone: "5317 2365",
-    district: "NT"
-  },
-
-  "UNI": {
-    nameEn: "United Centre",
-    nameZh: "統一中心",
-    addressEn: "Shop 101, 1/F, United Centre, 95 Queensway, Admiralty",
-    addressZh: "金鐘金鐘道95號統一中心1樓101號舖",
-    phone: "5317 2386",
+  "TVC": {
+    nameEn: "The Vine Centre",
+    nameZh: "葡萄藤教會中心",
+    addressEn: "G/F, The Vine Centre, 29 Burrows Street, Wan Chai",
+    addressZh: "灣仔巴路士街29號葡萄藤教會中心2期地下",
+    phone: "5422 6114",
     district: "HK"
   },
 
-  "VCP": {
-    nameEn: "V City",
-    nameZh: "V City",
-    addressEn: "Shop G-13, G/F, V City, 83 Tuen Mun Heung Sze Wui Road, Tuen Mun",
-    addressZh: "新界屯門鄉事會路83號V City地下G-13號舖",
-    phone: "5317 2407",
+  "TYP": {
+    nameEn: "Tai Yau Plaza",
+    nameZh: "大有廣場",
+    addressEn: "Shop 107, Level 1, Tai Yau Plaza, 181 Johnston Road, Wan Chai",
+    addressZh: "灣仔莊士敦道181號大有廣場1樓107號舖",
+    phone: "5161 9843",
+    district: "HK"
+  },
+
+  "UB2": {
+    nameEn: "Baptist University",
+    nameZh: "浸會大學",
+    addressEn: "iCafé, 3/F, Wing Lung Bank Building for Business Studies, HKBU, Kowloon Tong",
+    addressZh: "九龍塘浸會大學逸夫校園永隆銀行商學大樓三樓iCafé",
+    phone: "5498 2886",
+    district: "KLN"
+  },
+
+  "UDI": {
+    nameEn: "Hong Kong Design Institute",
+    nameZh: "香港知專設計學院",
+    addressEn: "G/F, HKDI & IVE (Lee Wai Lee), 3 King Ling Road, Tseung Kwan O",
+    addressZh: "新界將軍澳景嶺路3號香港知專設計學院/香港專業教育學院(李惠利)地下",
+    phone: "5162 0886",
     district: "NT"
   },
 
-  "WAC": {
-    nameEn: "Wing On Centre",
-    nameZh: "永安中心",
-    addressEn: "Shop 102, 1/F, Wing On Centre, 111 Connaught Road Central",
-    addressZh: "上環干諾道中111號永安中心1樓102號舖",
-    phone: "5317 2428",
+  "UE2": {
+    nameEn: "The Education University of Hong Kong",
+    nameZh: "香港教育大學",
+    addressEn: "Learning Commons, Lower Podium Floor, Block C, EdUHK, 10 Lo Ping Road, Tai Po",
+    addressZh: "新界大埔露屏路10號香港教育大學C座低層平臺學習共用空間",
+    phone: "5107 9629",
+    district: "NT"
+  },
+
+  "UKE": {
+    nameEn: "HKU SPACE (Kowloon East Campus)",
+    nameZh: "香港大學專業進修學院",
+    addressEn: "1/F, HKU SPACE Kowloon East Campus, 28 Wang Hoi Road, Kowloon Bay",
+    addressZh: "九龍灣宏開道28號香港大學專業進修學院九龍東分校1樓",
+    phone: "5162 1573",
+    district: "KLN"
+  },
+
+  "ULN": {
+    nameEn: "Lingnan University",
+    nameZh: "嶺南大學",
+    addressEn: "Room 13, G/F, Patrick Lee Wan Keung Academic Building, Lingnan University, Tuen Mun",
+    addressZh: "屯門嶺南大學李運強教學大樓G層13室",
+    phone: "6953 0311",
+    district: "NT"
+  },
+
+  "UPH": {
+    nameEn: "PolyU Hung Hom Bay Campus",
+    nameZh: "理工大學紅磡灣校園",
+    addressEn: "Café, 4/F, PolyU Hung Hom Bay Campus, 8 Hung Lok Road, Hung Hom",
+    addressZh: "香港九龍紅磡紅樂道8號香港理工大學紅磡灣校園4樓",
+    phone: "5162 2329",
+    district: "KLN"
+  },
+
+  "UPL": {
+    nameEn: "The Hong Kong Polytechnic University",
+    nameZh: "香港理工大學",
+    addressEn: "X Cafe, P/F, Block X, PolyU, Hung Hom",
+    addressZh: "九龍紅磡香港理工大學X座地下X Cafe",
+    phone: "5100 7121",
+    district: "KLN"
+  },
+
+  "UST": {
+    nameEn: "Hong Kong University of Science & Technology",
+    nameZh: "香港科技大學",
+    addressEn: "G/F, Lee Shau Kee Building, 1 University Road, HKUST, Sai Kung",
+    addressZh: "新界西貢香港科技大學大學道1號李兆基樓地下",
+    phone: "5162 5103",
+    district: "NT"
+  },
+
+  "USY": {
+    nameEn: "Shue Yan University",
+    nameZh: "樹仁大學",
+    addressEn: "Food Court 01, 1/F, Low Block, Shue Yan University Research Complex, 6 Wai Tsui Crescent, North Point",
+    addressZh: "香港北角寶馬山慧翠道6號樹仁大學研究院綜合大樓低座一樓一號食堂",
+    phone: "5531 1480",
     district: "HK"
   },
+
+  "WAI": {
+    nameEn: "The Wai",
+    nameZh: "The Wai",
+    addressEn: "Shop 335, 3/F, The Wai, Tai Wai",
+    addressZh: "新界大圍The Wai 3樓335號舖",
+    phone: "5162 7985",
+    district: "NT"
+  },
+
+  "WHK": {
+    nameEn: "9 Wing Hong Street",
+    nameZh: "永康街",
+    addressEn: "Lobby, G/F, 9 Wing Hong Street, Cheung Sha Wan",
+    addressZh: "長沙灣永康街9號地下大堂",
+    phone: "5164 7641",
+    district: "KLN"
+  },
+
+  "WY2": {
+    nameEn: "8 Wyndham Street",
+    nameZh: "雲咸街",
+    addressEn: "Portion of Lobby, G/F, 8 Wyndham Street, Central",
+    addressZh: "中環雲咸街8號地下大堂",
+    phone: "5167 0473",
+    district: "HK"
+  }
 
 });
-Object.assign(storeData, {
 
-  "WDB": {
-    nameEn: "World-Wide House",
-    nameZh: "環球大廈",
-    addressEn: "Shop 12, 1/F, World-Wide House, 19 Des Voeux Road Central",
-    addressZh: "中環德輔道中19號環球大廈1樓12號舖",
-    phone: "5317 2449",
-    district: "HK"
-  },
 
-  "WLB": {
-    nameEn: "Wai Lun Building",
-    nameZh: "偉倫樓",
-    addressEn: "Shop 2, G/F, Wai Lun Building, 15–17 Kau Yuk Road, Yuen Long",
-    addressZh: "新界元朗教育路15–17號偉倫樓地下2號舖",
-    phone: "5317 2470",
-    district: "NT"
-  },
 
-  "WPL": {
-    nameEn: "Whampoa Plaza",
-    nameZh: "黃埔花園",
-    addressEn: "Shop G16, G/F, Whampoa Plaza, 7 Tak On Street, Hung Hom",
-    addressZh: "紅磡德安街7號黃埔花園黃埔廣場地下G16號舖",
-    phone: "5317 2491",
-    district: "KLN"
-  },
-
-  "YMT": {
-    nameEn: "Yau Ma Tei Station",
-    nameZh: "油麻地站",
-    addressEn: "Shop 9, Concourse Level, Yau Ma Tei MTR Station",
-    addressZh: "九龍油麻地港鐵站大堂層9號舖",
-    phone: "5317 2512",
-    district: "KLN"
-  },
-
-});
-Object.assign(storeData, {
-
-  "WDB": {
-    nameEn: "World-Wide House",
-    nameZh: "環球大廈",
-    addressEn: "Shop 12, 1/F, World-Wide House, 19 Des Voeux Road Central",
-    addressZh: "中環德輔道中19號環球大廈1樓12號舖",
-    phone: "5317 2449",
-    district: "HK"
-  },
-
-  "WLB": {
-    nameEn: "Wai Lun Building",
-    nameZh: "偉倫樓",
-    addressEn: "Shop 2, G/F, Wai Lun Building, 15–17 Kau Yuk Road, Yuen Long",
-    addressZh: "新界元朗教育路15–17號偉倫樓地下2號舖",
-    phone: "5317 2470",
-    district: "NT"
-  },
-
-  "WPL": {
-    nameEn: "Whampoa Plaza",
-    nameZh: "黃埔花園",
-    addressEn: "Shop G16, G/F, Whampoa Plaza, 7 Tak On Street, Hung Hom",
-    addressZh: "紅磡德安街7號黃埔花園黃埔廣場地下G16號舖",
-    phone: "5317 2491",
-    district: "KLN"
-  },
-
-  "YMT": {
-    nameEn: "Yau Ma Tei Station",
-    nameZh: "油麻地站",
-    addressEn: "Shop 9, Concourse Level, Yau Ma Tei MTR Station",
-    addressZh: "九龍油麻地港鐵站大堂層9號舖",
-    phone: "5317 2512",
-    district: "KLN"
-  },
 
 });
