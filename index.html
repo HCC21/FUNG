@@ -73,22 +73,28 @@
   <button onclick="setLang('en')" style="padding:5px 10px; border-radius:6px;">English</button>
 </div>
 
-<!-- ⭐ 背景音樂控制 -->
-<div style="position: fixed; top: 100px; right: 20px; z-index: 999;
-            background: rgba(255,255,255,0.85); padding:10px; border-radius:10px;
-            box-shadow:0 0 6px rgba(0,0,0,0.2); width:150px;">
+<h1 id="title">Cherry Area 每日通道</h1>
+
+<!-- ⭐ 背景音樂控制（放在標題下方） -->
+<div style="
+  margin-top: 10px;
+  background: rgba(255,255,255,0.85);
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+">
   <button onclick="toggleBGM()" 
-          style="padding:5px 10px; width:100%; border-radius:6px; background:#ff9800; color:white;">
+          style="padding:6px 14px; border-radius:6px; background:#ff9800; color:white; font-size:1em;">
     🎵 播放 / 暫停
   </button>
 
-  <div style="margin-top:10px; font-size:0.9em;">音量</div>
+  <div style="margin-top:8px; font-size:0.9em; font-weight:bold;">音量</div>
   <input type="range" min="0" max="1" step="0.01" value="0.5"
          id="bgmVolume" oninput="changeVolume(this.value)"
-         style="width:100%;">
+         style="width:160px;">
 </div>
 
-<h1 id="title">Cherry Area 每日通道</h1>
 <p id="dateTime"></p>
 
 <!-- ⭐ 天氣預報 -->
