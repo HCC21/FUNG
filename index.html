@@ -162,6 +162,7 @@
 
 <script>
   const storeNameMap = {};
+  const storeNameZhMap = {};
   const addressMap = {};
   const addressZhMap = {};
   const phoneMap = {};
@@ -169,6 +170,7 @@
   for (const code in storeData) {
     const s = storeData[code];
     storeNameMap[code] = s.nameEn;
+    storeNameZhMap[code] = s.nameZh;   // ⭐ 新增中文名稱
     addressMap[code] = s.addressEn;
     addressZhMap[code] = s.addressZh;
     phoneMap[code] = s.phone;
@@ -176,12 +178,15 @@
 
   window.onload = function () {
     const select = document.getElementById("storeCodeInput");
-    const codes = Object.keys(storeNameMap).sort();
+    const codes = Object.keys(storeNameZhMap).sort();
 
     codes.forEach(code => {
       const opt = document.createElement("option");
+
+      // ⭐ 改成顯示中文名稱
       opt.value = code;
-      opt.textContent = code + " — " + storeNameMap[code];
+      opt.textContent = code + " — " + storeNameZhMap[code];
+
       select.appendChild(opt);
     });
   };
