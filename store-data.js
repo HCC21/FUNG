@@ -192,6 +192,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "FTC": {
@@ -231,6 +232,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "GEH": {
@@ -319,6 +321,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "JPW": {
@@ -412,6 +415,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "LME": {
@@ -469,6 +473,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "MMK": {
@@ -530,6 +535,7 @@ Object.assign(storeData, {
   },
 
 });
+
 Object.assign(storeData, {
 
   "OH3": {
@@ -840,6 +846,8 @@ Object.assign(storeData, {
     district: "NT"
   },
 
+});
+Object.assign(storeData, {
   "TVC": {
     nameEn: "The Vine Centre",
     nameZh: "葡萄藤教會中心",
