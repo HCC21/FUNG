@@ -839,7 +839,6 @@ Object.assign(storeData, {
     phone: "5138 8150",
     district: "NT"
   },
-Object.assign(storeData, {
 
   "TVC": {
     nameEn: "The Vine Centre",
@@ -966,10 +965,5 @@ Object.assign(storeData, {
     phone: "5167 0473",
     district: "HK"
   }
-
-});
-
-
-
 
 });
