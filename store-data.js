@@ -897,21 +897,21 @@ Object.assign(storeData, {
   },
 
   "TKO": {
-    nameEn: "TKO Gateway",
-    nameZh: "TKO Gateway",
-    addressEn: "Shop G15, G/F, TKO Gateway East Wing, 2 Tong Yin Street, Tseung Kwan O",
-    addressZh: "新界將軍澳唐賢街2號TKO Gateway東翼地下G15號舖",
+    nameEn: "TKO Spot",
+    nameZh: "尚德TKO",
+    addressEn: "Unit SA03, 1/F, TKO Spot, Sheung Tak Estate, 2 Tong Ming Street, Tseung Kwan O",
+    addressZh: "將軍澳唐明街2號TKO SPOT一樓, SA03單位",
     phone: "5317 2218",
     district: "NT"
   },
 
   "TKS": {
-    nameEn: "Tsim Sha Tsui Station",
-    nameZh: "尖沙咀站",
-    addressEn: "Shop 21, Concourse Level, Tsim Sha Tsui MTR Station",
-    addressZh: "九龍尖沙咀港鐵站大堂層21號舖",
-    phone: "5317 2239",
-    district: "KLN"
+    nameEn: "Cityplaza",
+    nameZh: "太古城中心",
+    addressEn: "Shop 502, 5/F, Cityplaza, Taikoo Shing, Taikoo",
+    addressZh: "太古太古城中心5樓502號舖",
+    phone: "5161 4067",
+    district: "HK"
   },
 
 });
