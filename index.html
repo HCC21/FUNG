@@ -133,7 +133,7 @@
     <option value="">請選擇分店代號</option>
   </select>
 
-  <div id="storeAddressResult" class="result-box">英文地址：—</div>
+  <div id="storeAddressResult" class="result-box">Address：—</div>
   <div id="storeAddressZhResult" class="result-box">中文地址：—</div>
   <div id="storePhoneResult" class="result-box">電話：—</div>
 </section>
@@ -174,7 +174,7 @@
     const code = this.value;
 
     document.getElementById("storeAddressResult").textContent =
-      "英文地址：" + (addressMap[code] || "—");
+      "Address：" + (addressMap[code] || "—");
 
     document.getElementById("storeAddressZhResult").textContent =
       "中文地址：" + (addressZhMap[code] || "—");
