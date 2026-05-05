@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 
 <style>
-
   body {
     font-family: 'Noto Serif TC', serif;
     text-align: center;
@@ -46,14 +45,12 @@
   .link-button:hover {
     background: rgba(69, 160, 73, 0.95);
   }
-
   .section-title {
     background-color: rgba(255, 255, 255, 0.85);
     display: inline-block;
     padding: 8px 20px;
     border-radius: 10px;
   }
-
   .result-box {
     background-color: rgba(255, 255, 255, 0.85);
     display: block;
@@ -65,20 +62,20 @@
     font-weight: bold;
     text-align: left;
   }
-
   @media (max-width: 768px) {
     .result-box {
       width: 90%;
     }
   }
 </style>
-
 </head>
+
 <body>
 
 <h1>Cherry Area 每日通道</h1>
 <p id="dateTime"></p>
-<!-- ⭐ 香港 7 日天氣預報（自動更新） -->
+
+<!-- ⭐ 香港 7 日天氣預報 -->
 <section style="margin-top:20px; padding:15px; background:rgba(255,255,255,0.8); width:90%; max-width:900px; margin-left:auto; margin-right:auto; border-radius:12px;">
   <h2 style="margin-bottom:10px;">🌤️ 香港 7 日天氣預報</h2>
   <div id="weather7days" style="text-align:left; font-size:1.1em; line-height:1.6;"></div>
@@ -89,9 +86,8 @@
     try {
       const res = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc");
       const data = await res.json();
-
       let html = "";
-      const days = data.weatherForecast.slice(0, 7); // 只取 7 日
+      const days = data.weatherForecast.slice(0, 7);
 
       days.forEach(d => {
         html += `
@@ -104,15 +100,14 @@
       });
 
       document.getElementById("weather7days").innerHTML = html;
-
     } catch (e) {
       document.getElementById("weather7days").innerHTML = "⚠️ 天氣資料暫時無法取得";
     }
   }
-
   loadWeather();
 </script>
 
+<!-- ⭐ 連結按鈕 -->
 <a href="https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link" class="link-button" target="_blank">📊2026 Revence Data</a>
 <a href="https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link" class="link-button" target="_blank">📊2025 Revence Data</a>
 <a href="https://hkprodapp.pacificcoffee.com/dist/#/" class="link-button">📦ERP系統</a>
@@ -129,7 +124,7 @@
   }, 1000);
 </script>
 
-<!-- ⭐ 分店代號查詢（地址 + 電話顯示在下方） -->
+<!-- ⭐ 分店查詢（使用 store-data.json） -->
 <section style="margin-top:40px;">
   <h2 class="section-title">選擇分店代號查詢資料</h2>
   <br><br>
@@ -138,85 +133,51 @@
     <option value="">請選擇分店代號</option>
   </select>
 
-  <div id="storeAddressResult" class="result-box">地址：—</div>
+  <div id="storeAddressResult" class="result-box">英文地址：—</div>
+  <div id="storeAddressZhResult" class="result-box">中文地址：—</div>
   <div id="storePhoneResult" class="result-box">電話：—</div>
 </section>
 
 <script>
- const storeMap = {
-   "CTS":"荃灣千色二期","HCC":"尖沙咀文化中心","KAT":"藍田啟田","KIM":"尖沙咀金巴厘",
-   "LGN":"麗港城","NAT":"尖沙咀山林道","ONE":"何文田勝利道","PID":"珀麗灣",
-   "SCD":"尖沙咀新港中心","SSC":"上水中心","TKO":"將軍澳尚德","TKS":"太古城",
-   "CCK":"萬國寶通","NMS":"銀幕街","CH3":"尖沙咀中港城","GCK":"中央廣場",
-   "KCC":"九貿","KR2":"英皇道625","KWC":"嘉華","LAW":"荔枝角羅氏大廈",
-   "LUP":"沙田好運中心","MHH":"美孚曼克頓山","P33":"新蒲崗爵祿街","WHK":"荔枝角永康街",
-   "HUA":"科學園華為","OHM":"沙田石門滙豐","OS2":"中環恒生","OSM":"旺角恒生113",
-   "PMH":"瑪嘉烈","PWH":"沙田威爾斯","TKH":"將軍澳醫院","TMH":"屯門醫院",
-   "UE2":"大埔教大","ULN":"嶺大","UPH":"紅磡灣理大","UPL":"理工","BCT":"中銀",
-   "CBK":"數碼港","HKP":"香港廣場","IFP":"無限極","LPC":"力寶","QM2":"瑪麗1座",
-   "QMT":"瑪麗T座","SJC":"聖約翰大廈","TCP":"華懋二期","TCS":"中環中心",
-   "WY2":"雲鹹街","CDW":"荃灣中染","CVP":"會展","FTC":"英皇道1063","GEC":"鷹君",
-   "LGT":"利園","LME":"安盛","MFC":"宏利中心","MNT":"創紀8","NN2":"如心",
-   "CHT":"卓爾","CTP":"新明大廈","ECT":"國際交易中心","FVP":"錦繡花園",
-   "HGC":"黃金海岸","HHQ":"啟匯","OMT":"宏利大樓","SKY":"宏天","TM2":"屯市廣場",
-   "GEH":"港怡","HCH":"兒童醫院","KLH":"九龍醫院","LOK":"樂富","MMK":"紅磡都會",
-   "QEK":"伊利沙伯醫院","STH":"法國醫院","TEM":"黃大仙","UB2":"浸大",
-   "UDI":"知專","UKE":"專業進修學院","UST":"科大","USY":"樹仁","DB3":"愉景灣",
-   "IPS":"港運城","ODL":"德勤","OH3":"滙豐20樓","OH4":"大角咀滙豐","OH5":"滙豐地庫",
-   "OH6":"滙豐28樓","OLP":"國都","OML":"長江美銀","PEB":"太子花園街",
-   "STN":"赤柱","WAI":"大圍圍方","ALK":"聯合鹿島","AWE":"亞博一樓",
-   "CLI":"中人壽","CP2":"中環廣場","FBT":"華比富通","FNK":"東城大廈",
-   "JPW":"三聯","TVC":"灣仔教會","TYP":"大有"
- };
+let storeData = {};
 
- // ⭐ 地址（示範，可自行補上）
- const addressMap = {
-   "CTS":"荃灣千色匯二期 3 樓",
-   "HCC":"尖沙咀梳士巴利道 10 號",
-   "KAT":"藍田啟田商場 1 樓",
-   "KIM":"尖沙咀金巴利道 25 號",
-   "LGN":"麗港城商場地下"
- };
+// ⭐ 載入 store-data.json
+fetch("store-data.json")
+  .then(res => res.json())
+  .then(data => {
+    storeData = data;
 
- // ⭐ 電話（示範，可自行補上）
- const phoneMap = {
-   "CTS":"1234 5678",
-   "HCC":"2345 6789",
-   "KAT":"3456 7890",
-   "KIM":"4567 8901",
-   "LGN":"5678 9012"
- };
+    const select = document.getElementById("storeCodeInput");
+    const codes = Object.keys(storeData).sort();
 
- // ⭐ 自動載入下拉選單（英文字母排序）
- window.onload = function () {
-   const select = document.getElementById('storeCodeInput');
-   const sortedCodes = Object.keys(storeMap).sort();
+    codes.forEach(code => {
+      const opt = document.createElement("option");
+      opt.value = code;
+      opt.textContent = code + " — " + storeData[code].name;
+      select.appendChild(opt);
+    });
+  });
 
-   sortedCodes.forEach(code => {
-     const option = document.createElement('option');
-     option.value = code;
-     option.textContent = code + " — " + storeMap[code];
-     select.appendChild(option);
-   });
- };
+// ⭐ 顯示地址 + 電話
+document.getElementById("storeCodeInput").addEventListener("change", function () {
+  const code = this.value;
 
- // ⭐ 顯示地址 + 電話
- function lookupStoreInfo() {
-   const code = document.getElementById('storeCodeInput').value;
-   const addressBox = document.getElementById('storeAddressResult');
-   const phoneBox = document.getElementById('storePhoneResult');
+  if (!code || !storeData[code]) {
+    document.getElementById("storeAddressResult").textContent = "英文地址：—";
+    document.getElementById("storeAddressZhResult").textContent = "中文地址：—";
+    document.getElementById("storePhoneResult").textContent = "電話：—";
+    return;
+  }
 
-   if (!code) {
-     addressBox.textContent = "地址：—";
-     phoneBox.textContent = "電話：—";
-     return;
-   }
+  document.getElementById("storeAddressResult").textContent =
+    "英文地址：" + storeData[code].address_en;
 
-   addressBox.textContent = "地址：" + (addressMap[code] || "未提供");
-   phoneBox.textContent = "電話：" + (phoneMap[code] || "未提供");
- }
+  document.getElementById("storeAddressZhResult").textContent =
+    "中文地址：" + storeData[code].address_zh;
 
- document.getElementById('storeCodeInput').addEventListener('change', lookupStoreInfo);
+  document.getElementById("storePhoneResult").textContent =
+    "電話：" + storeData[code].phone;
+});
 </script>
 
 <!-- ⭐ QR Code 區塊 -->
@@ -234,6 +195,7 @@
     const url = document.getElementById('urlInput').value.trim();
     const qrContainer = document.getElementById('qrCode');
     qrContainer.innerHTML = '';
+
     if (url) {
       QRCode.toDataURL(url, function (err, src) {
         if (!err) {
@@ -256,3 +218,4 @@
 
 </body>
 </html>
+
