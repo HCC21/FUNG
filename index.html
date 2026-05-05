@@ -124,7 +124,7 @@
   }, 1000);
 </script>
 
-<!-- ⭐ 分店查詢（使用 store-data.json） -->
+<!-- ⭐ 分店查詢 -->
 <section style="margin-top:40px;">
   <h2 class="section-title">選擇分店代號查詢資料</h2>
   <br><br>
@@ -138,46 +138,50 @@
   <div id="storePhoneResult" class="result-box">電話：—</div>
 </section>
 
+<!-- ⭐ 載入獨立資料檔 -->
+<script src="store-data.js"></script>
+
 <script>
-let storeData = {};
+  // ⭐ 自動從 storeData 生成 maps
+  const storeNameMap = {};
+  const addressMap = {};
+  const addressZhMap = {};
+  const phoneMap = {};
 
-// ⭐ 載入 store-data.json
-fetch("store-data.json")
-  .then(res => res.json())
-  .then(data => {
-    storeData = data;
+  for (const code in storeData) {
+    const s = storeData[code];
+    storeNameMap[code] = s.nameEn;
+    addressMap[code] = s.addressEn;
+    addressZhMap[code] = s.addressZh;
+    phoneMap[code] = s.phone;
+  }
 
+  // ⭐ 載入下拉選單
+  window.onload = function () {
     const select = document.getElementById("storeCodeInput");
-    const codes = Object.keys(storeData).sort();
+    const codes = Object.keys(storeNameMap).sort();
 
     codes.forEach(code => {
       const opt = document.createElement("option");
       opt.value = code;
-      opt.textContent = code + " — " + storeData[code].name;
+      opt.textContent = code + " — " + storeNameMap[code];
       select.appendChild(opt);
     });
+  };
+
+  // ⭐ 顯示查詢結果
+  document.getElementById("storeCodeInput").addEventListener("change", function () {
+    const code = this.value;
+
+    document.getElementById("storeAddressResult").textContent =
+      "英文地址：" + (addressMap[code] || "—");
+
+    document.getElementById("storeAddressZhResult").textContent =
+      "中文地址：" + (addressZhMap[code] || "—");
+
+    document.getElementById("storePhoneResult").textContent =
+      "電話：" + (phoneMap[code] || "—");
   });
-
-// ⭐ 顯示地址 + 電話
-document.getElementById("storeCodeInput").addEventListener("change", function () {
-  const code = this.value;
-
-  if (!code || !storeData[code]) {
-    document.getElementById("storeAddressResult").textContent = "英文地址：—";
-    document.getElementById("storeAddressZhResult").textContent = "中文地址：—";
-    document.getElementById("storePhoneResult").textContent = "電話：—";
-    return;
-  }
-
-  document.getElementById("storeAddressResult").textContent =
-    "英文地址：" + storeData[code].address_en;
-
-  document.getElementById("storeAddressZhResult").textContent =
-    "中文地址：" + storeData[code].address_zh;
-
-  document.getElementById("storePhoneResult").textContent =
-    "電話：" + storeData[code].phone;
-});
 </script>
 
 <!-- ⭐ QR Code 區塊 -->
@@ -218,4 +222,3 @@ document.getElementById("storeCodeInput").addEventListener("change", function ()
 
 </body>
 </html>
-
