@@ -60,17 +60,32 @@
 
 <body>
 
-<!-- ⭐ 左上角登入欄 -->
+<!-- ⭐ 左上登入 -->
 <div style="position: fixed; top: 20px; left: 20px; background: rgba(255,255,255,0.85); padding: 10px 15px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.2); z-index: 999;">
   <input type="password" id="loginPassword" placeholder="管理員密碼" style="padding:5px; width:140px; border-radius:6px;">
   <button id="loginBtn" onclick="checkLogin()" style="padding:5px 10px; border-radius:6px; background:#4CAF50; color:white;">登入</button>
   <p id="loginMessage" style="color:red; font-weight:bold; margin:5px 0 0 0;"></p>
 </div>
 
-<!-- ⭐ 右上角語言切換 -->
+<!-- ⭐ 右上語言切換 -->
 <div style="position: fixed; top: 20px; right: 20px; z-index: 999;">
   <button onclick="setLang('zh')" style="padding:5px 10px; border-radius:6px;">中文</button>
   <button onclick="setLang('en')" style="padding:5px 10px; border-radius:6px;">English</button>
+</div>
+
+<!-- ⭐ 背景音樂控制 -->
+<div style="position: fixed; top: 100px; right: 20px; z-index: 999;
+            background: rgba(255,255,255,0.85); padding:10px; border-radius:10px;
+            box-shadow:0 0 6px rgba(0,0,0,0.2); width:150px;">
+  <button onclick="toggleBGM()" 
+          style="padding:5px 10px; width:100%; border-radius:6px; background:#ff9800; color:white;">
+    🎵 播放 / 暫停
+  </button>
+
+  <div style="margin-top:10px; font-size:0.9em;">音量</div>
+  <input type="range" min="0" max="1" step="0.01" value="0.5"
+         id="bgmVolume" oninput="changeVolume(this.value)"
+         style="width:100%;">
 </div>
 
 <h1 id="title">Cherry Area 每日通道</h1>
@@ -79,11 +94,7 @@
 <!-- ⭐ 天氣預報 -->
 <section style="margin-top:20px; padding:10px; background:rgba(255,255,255,0.8); width:90%; max-width:900px; margin-left:auto; margin-right:auto; border-radius:12px;">
   <h2 id="weatherTitle" style="margin-bottom:10px; font-size:1.2em;">🌤️ 香港 7 日天氣預報</h2>
-
-  <!-- ⭐ 可左右滑動，但不自動滑動 -->
-  <div id="weatherScroll" 
-       style="display:flex; overflow-x:auto; gap:10px; padding-bottom:10px; white-space:nowrap;">
-  </div>
+  <div id="weatherScroll" style="display:flex; overflow-x:auto; gap:10px; padding-bottom:10px; white-space:nowrap;"></div>
 </section>
 
 <script>
@@ -163,12 +174,12 @@ function setLang(lang) {
 }
 </script>
 
-<!-- ⭐ 登入後顯示的 4 個連結 -->
+<!-- ⭐ 登入後顯示連結 -->
 <div id="adminLinks" style="display:none; margin-top:20px;">
-  <a id="admin1" href="https://drive.google.com/drive/folders/1cVuq8SG0kp_vbzQk8XWWHfHhsrbnEKbh?usp=drive_link" class="link-button">🔒 2026 Revenue Data</a>
-  <a id="admin2" href="https://drive.google.com/drive/folders/1GcMQC4TJCMT6YgVkldTBxpCnlEBNf3wo?usp=drive_link" class="link-button">🔒 2025 Revenue Data</a>
-  <a id="admin3" href="https://drive.google.com/drive/folders/11a_VDUoQvwF7xf9Hudr92NGgBIfNAAp6" class="link-button">🔒 每月上載更表</a>
-  <a id="admin4" href="https://1drv.ms/x/s!AurgEr5nfQcDhxCxxdLf8zA-DkFn?e=hQQskU" class="link-button">🔒 每日時鐘</a>
+  <a id="admin1" href="#" class="link-button">🔒 2026 Revenue Data</a>
+  <a id="admin2" href="#" class="link-button">🔒 2025 Revenue Data</a>
+  <a id="admin3" href="#" class="link-button">🔒 每月上載更表</a>
+  <a id="admin4" href="#" class="link-button">🔒 每日時鐘</a>
 </div>
 
 <!-- ⭐ 其他連結 -->
@@ -257,7 +268,7 @@ document.getElementById("storeCodeInput").addEventListener("change", function ()
 });
 </script>
 
-<!-- ⭐ QR Code 區塊 -->
+<!-- ⭐ QR Code -->
 <section style="margin-top:40px;">
   <h2 id="qrTitle" class="section-title">輸入網址轉換成 QR CODE</h2>
   <br><br>
@@ -346,6 +357,30 @@ async function loadWeather() {
 }
 
 loadWeather();
+</script>
+
+<!-- ⭐ 背景音樂播放器 -->
+<audio id="bgm" src="bgm.mp3" loop></audio>
+
+<script>
+let bgmPlaying = false;
+
+function toggleBGM() {
+  const bgm = document.getElementById("bgm");
+
+  if (!bgmPlaying) {
+    bgm.play();
+    bgmPlaying = true;
+  } else {
+    bgm.pause();
+    bgmPlaying = false;
+  }
+}
+
+function changeVolume(v) {
+  const bgm = document.getElementById("bgm");
+  bgm.volume = v;
+}
 </script>
 
 </body>
