@@ -285,9 +285,9 @@ Object.assign(storeData, {
   },
 
   "HKP": {
-    nameEn: "Hong Kong Plaza",
-    nameZh: "香港廣場",
-    addressEn: "Shop 1, G/F, Hong Kong Plaza, 188 Connaught Road West",
+    nameEn: "SHEK TONG TSUI HONG KONG PLAZA",
+    nameZh: "石塘咀香港廣場",
+    addressEn: "SHOP NO. 1 ON THE GROUND FLOOR OF HONG KONG PLAZA, NO. 188 CONNAUGHT ROAD WEST, HONG KONGSHOP NO. 1 ON THE GROUND FLOOR OF HONG KONG PLAZA, NO. 188 CONNAUGHT ROAD WEST, HONG KONG",
     addressZh: "香港干諾道西188號香港廣場地下1號舖",
     phone: "5130 8437",
     district: "HK"
