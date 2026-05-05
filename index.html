@@ -79,10 +79,15 @@
 <!-- ⭐ 天氣預報 -->
 <section style="margin-top:20px; padding:10px; background:rgba(255,255,255,0.8); width:90%; max-width:900px; margin-left:auto; margin-right:auto; border-radius:12px;">
   <h2 id="weatherTitle" style="margin-bottom:10px; font-size:1.2em;">🌤️ 香港 7 日天氣預報</h2>
-  <div id="weatherScroll" style="display:flex; overflow-x:auto; gap:10px; padding-bottom:10px; white-space:nowrap; scroll-behavior:smooth;"></div>
+
+  <!-- ⭐ 可左右滑動，但不自動滑動 -->
+  <div id="weatherScroll" 
+       style="display:flex; overflow-x:auto; gap:10px; padding-bottom:10px; white-space:nowrap;">
+  </div>
 </section>
 
 <script>
+/* ⭐ 語言資料 */
 const LANG = {
   zh: {
     title: "Cherry Area 每日通道",
@@ -132,6 +137,7 @@ const LANG = {
 
 let currentLang = "zh";
 
+/* ⭐ 語言切換 */
 function setLang(lang) {
   currentLang = lang;
 
@@ -172,6 +178,7 @@ function setLang(lang) {
 <a id="form" href="https://drive.google.com/drive/folders/1yI6vbNPonKQSwrwM38v6Q1mRR5JkUyxJ?usp=drive_link" class="link-button">📄分店使用表格</a>
 
 <script>
+/* ⭐ 登入功能 */
 function checkLogin() {
   const input = document.getElementById("loginPassword").value;
   const correct = "cherry2026";
@@ -184,6 +191,7 @@ function checkLogin() {
   }
 }
 
+/* ⭐ 時鐘 */
 setInterval(() => {
   const now = new Date();
   document.getElementById('dateTime').textContent = now.toLocaleString();
@@ -207,6 +215,7 @@ setInterval(() => {
 <script src="store-data.js"></script>
 
 <script>
+/* ⭐ 分店資料 */
 const storeNameMap = {};
 const storeNameZhMap = {};
 const addressMap = {};
@@ -284,7 +293,7 @@ function generateQRCode() {
 }
 </script>
 
-<!-- ⭐ 天氣預報（圖示 + 顏色 + 自動滑動） -->
+<!-- ⭐ 天氣預報（不自動滑動 + 文字不出界） -->
 <script>
 async function loadWeather() {
   try {
@@ -310,7 +319,7 @@ async function loadWeather() {
 
       html += `
         <div style="
-          min-width:130px;
+          min-width:140px;
           background:${bg};
           padding:12px;
           border-radius:12px;
@@ -318,6 +327,8 @@ async function loadWeather() {
           font-size:0.9em;
           text-align:left;
           color:#333;
+          white-space: normal;
+          word-break: break-word;
         ">
           <div style="font-size:1.4em;">${icon}</div>
           <b>${d.forecastDate.substring(4,6)}月${d.forecastDate.substring(6,8)}日</b><br>
@@ -328,14 +339,6 @@ async function loadWeather() {
     });
 
     document.getElementById("weatherScroll").innerHTML = html;
-
-    setInterval(() => {
-      const box = document.getElementById("weatherScroll");
-      box.scrollLeft += 140;
-      if (box.scrollLeft + box.clientWidth >= box.scrollWidth) {
-        box.scrollLeft = 0;
-      }
-    }, 3000);
 
   } catch (e) {
     document.getElementById("weatherScroll").innerHTML = "⚠️ 無法取得天氣資料";
