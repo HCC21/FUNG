@@ -622,6 +622,15 @@ Object.assign(storeData, {
     district: "KLN"
   },
 
+  "OS2": {
+    nameEn: "One Victory",
+    nameZh: "中環恆生",
+    addressEn: "7/F, Hang Seng Bank Headquarters Building, 83 Des Voeux Road Central, Central",
+    addressZh: "中環德輔導中83號恆生銀行大廈7樓",
+    phone: "5499 5122",
+    district: "HK"
+  },
+
   "OSM": {
     nameEn: "Hang Seng 113",
     nameZh: "恆生113",
