@@ -118,6 +118,7 @@ const LANG = {
     admin4: "🔒 每日時鐘",
     erp: "📦ERP系統",
     inv: "📦PCC Inventory系統(只用作Clockin/out)",
+    cat: "📊餐飲王系統",
     gaia: "🕗 Gaia UI",
     form: "📄分店使用表格",
     storeTitle: "選擇分店代號查詢資料",
@@ -140,6 +141,7 @@ const LANG = {
     admin4: "🔒 Daily Clock-in Sheet",
     erp: "📦 ERP System",
     inv: "📦 PCC Inventory System (Clock-in/out only)",
+    cat: "📊Caterlord System",
     gaia: "🕗 Gaia UI",
     form: "📄 Store Forms",
     storeTitle: "Select Store Code",
@@ -171,11 +173,12 @@ function setLang(lang) {
 
   document.getElementById("erp").textContent = LANG[lang].erp;
   document.getElementById("inv").textContent = LANG[lang].inv;
+  document.getElementById("cat").textContent = LANG[lang].cat;
   document.getElementById("gaia").textContent = LANG[lang].gaia;
   document.getElementById("form").textContent = LANG[lang].form;
-
   document.getElementById("storeTitle").textContent = LANG[lang].storeTitle;
-
+  document.getElementById("qrTitle").textContent = LANG[lang].qrTitle;
+  document.getElementById("qrBtn").textContent = LANG[lang].qrBtn;
   loadWeather();
 }
 </script>
